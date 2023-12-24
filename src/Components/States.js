@@ -15,12 +15,13 @@ export default function States() {
     return (
         <div>
             <br />
-            X: <input type='number' value={x} onChange={handleX} /> <br />
-            Y: <input type='number' value={y} onChange={handleY} /><br /><br />
+            Change the Value of X: <input type='number' value={x} onChange={handleX} /> <br /><br />
+            Change the Value of Y: <input type='number' value={y} onChange={handleY} /><br /><br />
             <hr />
             <br />
             A: <input type='number' value={a} onChange={(e) => seta(e.target.value)} />
             B: <input type='number' value={b} onChange={(e) => setb(e.target.value)} />
+            <br /><br />
             <hr />
             <h1>X Value is : {x}</h1>
             <h1>Y Value is : {y}</h1>
