@@ -1,4 +1,5 @@
 import React from 'react'
+import 'semantic-ui-css/semantic.min.css'
 import { BrowserRouter, Outlet, Route, Link, Routes } from 'react-router-dom'
 import NOPage from './Components/NoPage'
 import States from './Components/States'
@@ -7,6 +8,8 @@ import Contact from './Components/Contact'
 import Services from './Components/Services'
 import Card from './Components/Card'
 import NewsAPI from './Components/NewsAPI'
+import { Button } from 'semantic-ui-react'
+import NewsAPIP from './Components/NewsAPINP'
 
 export default function App() {
   return (
@@ -25,6 +28,7 @@ export default function App() {
             <Route path='services' element={<Services />} />
             <Route path='card' element={<Card />} />
             <Route path='/newsapi' element={<NewsAPI />} />
+            <Route path='/newsapinp' element={<NewsAPIP />} />
 
           </Route>
         </Routes>
@@ -55,7 +59,7 @@ function MainMenu() {
       <Link to='/services'><button style={buttonStyle}>Services</button></Link>
       <Link to='/card'><button style={buttonStyle}>Card</button></Link>
       <Link to='/newsapi'><button style={buttonStyle}>NewsAPI</button></Link>
-
+      <Link to='/newsapinp'><Button style={buttonStyle}>NewsAPIP</Button></Link>
       <Outlet />
       <style>
 
