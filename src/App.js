@@ -6,6 +6,7 @@ import About from './Components/About'
 import Contact from './Components/Contact'
 import Services from './Components/Services'
 import Card from './Components/Card'
+import NewsAPI from './Components/NewsAPI'
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
             <Route path='contact' element={<Contact />} />
             <Route path='services' element={<Services />} />
             <Route path='card' element={<Card />} />
+            <Route path='/newsapi' element={<NewsAPI />} />
 
           </Route>
         </Routes>
@@ -52,6 +54,7 @@ function MainMenu() {
       <Link to='/contact'><button style={buttonStyle}>Contact</button></Link>
       <Link to='/services'><button style={buttonStyle}>Services</button></Link>
       <Link to='/card'><button style={buttonStyle}>Card</button></Link>
+      <Link to='/newsapi'><button style={buttonStyle}>NewsAPI</button></Link>
 
       <Outlet />
       <style>
