@@ -10,6 +10,8 @@ import Card from './Components/Card'
 import NewsAPI from './Components/NewsAPI'
 import { Button } from 'semantic-ui-react'
 import NewsAPIP from './Components/NewsAPINP'
+import NewsPra2 from './Components/NewsPra2'
+import Students from './FB/Students'
 
 export default function App() {
   return (
@@ -29,6 +31,9 @@ export default function App() {
             <Route path='card' element={<Card />} />
             <Route path='/newsapi' element={<NewsAPI />} />
             <Route path='/newsapinp' element={<NewsAPIP />} />
+            <Route path='/newspra2' element={<NewsPra2 />} />
+            <Route path='/students' element={<Students />} />
+
 
           </Route>
         </Routes>
@@ -60,6 +65,8 @@ function MainMenu() {
       <Link to='/card'><button style={buttonStyle}>Card</button></Link>
       <Link to='/newsapi'><button style={buttonStyle}>NewsAPI</button></Link>
       <Link to='/newsapinp'><Button style={buttonStyle}>NewsAPIP</Button></Link>
+      <Link to='/newspra2'><Button style={buttonStyle}>News API Pra2</Button></Link>
+      <Link to='/students'><Button style={buttonStyle}>Students</Button></Link>
       <Outlet />
       <style>
 
