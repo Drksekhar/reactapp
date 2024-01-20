@@ -2,6 +2,7 @@ const express = require("express")
 const bodyParser = require("body-parser")
 const cors = require("cors")
 const sqlite3 = require('sqlite3')
+const { studentsSQLiteAPI } = require("./students")
 const db = new sqlite3.Database('./sample.db')
 
 const app = express()
@@ -37,55 +38,4 @@ app.get('/product/:category/:item', (req, res) => {
     return res.json({ category, item })
 })
 // creating a table
-db.run(`
-  CREATE TABLE IF NOT EXISTS students (
-    [id] INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-    [name] TEXT,
-    [phone] TEXT
-    )
-  `);
-// selecting all the students form a table
-app.get('/students', (req, res) => {
-    const sql = "select * from  students"
-    db.all(sql, (error, result) => {
-        if (error) return res.status(500).json(error.message)
-        res.status(200).json(result)
-    })
-})
-// adding or insering students into the talbe
-app.post('/students', (req, res) => {
-    const { name, phone } = req.body
-    const sql = "INSERT INTO students (name,phone) VALUES (?,?)"
-    db.run(sql, [name, phone], (error) => {
-        if (error) return res.status(500).json(error.message)
-        return res.status(200).json("student added")
-    })
-})
-// deleting a particular student
-app.delete('/students/:id', (req, res) => {
-    const { id } = req.params
-    const sql = "DELETE FROM students where id=?"
-    db.run(sql, [id], (error) => {
-        if (error) return res.status(500).json(error.message)
-        return res.status(200).json("student deleted")
-    })
-})
-// Deleting all the students
-app.delete('/students', (req, res) => {
-    const { id } = req.params
-    const sql = "DELETE FROM students"
-    db.run(sql, (error) => {
-        if (error) return res.status(500).json(error.message)
-        return res.status(200).json("All students are deleted")
-    })
-})
-// updating or editing data in the table
-app.post('/students/:id', (req, res) => {
-    const { id } = req.params
-    const { name, phone } = req.body
-    const sql = "UPDATE  students set name=?, phone=? where id=?"
-    db.run(sql, [name, phone, id], (error) => {
-        if (error) return res.status(500).json(error.message)
-        return res.status(200).json("student updated")
-    })
-})
+studentsSQLiteAPI(app, db)

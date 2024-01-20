@@ -11,19 +11,21 @@ import States from './Components/States'
 import { Button } from 'semantic-ui-react'
 //import NewsAPIP from './Components/NewsAPINP'
 //import NewsPra2 from './Components/NewsPra2'
-import Students from './FB/Students'
+// import Students from './FB/Students'
 import OTPLogin from './FB/OTPLogin'
 import { createContext } from 'react'
 import Account from './FB/Account'
 import MyToDoList from './FB/MyToDoList'
 import TodoSimple from './FB/TodoSimple'
+import Students from './express/Students'
 export const MyContext = createContext(null)
 
 export default function App() {
   const [user, setUser] = useState(55)
+  const [token, setToken] = useState(null)
   return (<div>
     {/* <MyContext.Provider value={{ user, setUser }}/> */}
-    <MyContext.Provider value={{ user, setUser }}>
+    <MyContext.Provider value={{ user, setUser, token, setToken }}>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<MainMenu />}>
@@ -42,6 +44,8 @@ export default function App() {
             <Route path='/account' element={<Account />} />
             <Route path='/todosimple' element={<TodoSimple />} />
             <Route path='/mytodolist' element={<MyToDoList />} />
+            <Route path='/students' element={<Students />} />
+
           </Route>
         </Routes>
       </BrowserRouter>
@@ -77,6 +81,7 @@ function MainMenu() {
       <Link to='/account'><Button style={buttonStyle}>Account</Button></Link>
       <Link to='/todosimple'><Button style={buttonStyle}>Todo Simple</Button></Link>
       <Link to='/mytodolist'><Button style={buttonStyle}>MyToDoList</Button></Link>
+      <Link to='/students'><Button style={buttonStyle}>Students</Button></Link>
       <Outlet />
       <style>
 
