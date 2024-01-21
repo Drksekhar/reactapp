@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { MyContext } from '../App'
-import { Button, Container, Form, Input } from 'semantic-ui-react'
+import { Button, Container, Form } from 'semantic-ui-react'
 
 export default function MyAccount() {
     const { token, setToken } = useContext(MyContext)
@@ -24,7 +24,7 @@ export default function MyAccount() {
             headers: headersList
         });
 
-        let data = await response.text();
+        let data = await response.json();
         console.log(data);
         localStorage.setItem('token', JSON.stringify(data))
         setToken(data)
