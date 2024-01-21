@@ -5,6 +5,7 @@ const sqlite3 = require('sqlite3')
 const { studentsSQLiteAPI } = require("./students")
 const { booksSQLite } = require("./books")
 const { dummyAPIs } = require("./dummyapis")
+const { AuthenticationAPIs } = require("./auth")
 const db = new sqlite3.Database('./sample.db')
 
 const app = express()
@@ -14,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.listen(4000, () => {
     //console.log("Server is running on port 4000");
 })
-
+AuthenticationAPIs(app, db)
 studentsSQLiteAPI(app, db)
 booksSQLite(app, db)
 dummyAPIs(app, db)
