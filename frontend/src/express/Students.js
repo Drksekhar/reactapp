@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Button, Input, Form, List, Container, Modal } from 'semantic-ui-react'
+import { MyContext } from '../App'
 
 export default function Students() {
+    const { token } = useContext(MyContext)
     const [list, setList] = useState([])
     const [name, setName] = useState('')
     const [phone, setPhone] = useState('')
@@ -106,6 +108,9 @@ export default function Students() {
         setName('')
         setPhone('')
 
+    }
+    if (!token) {
+        return 'Please Login'
     }
 
     return (

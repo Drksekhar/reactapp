@@ -18,10 +18,12 @@ import Account from './FB/Account'
 import MyToDoList from './FB/MyToDoList'
 import TodoSimple from './FB/TodoSimple'
 import Students from './express/Students'
+import MyAccount from './express/MyAccount'
 export const MyContext = createContext(null)
 
 export default function App() {
   const [user, setUser] = useState(55)
+
   const [token, setToken] = useState(null)
   return (<div>
     {/* <MyContext.Provider value={{ user, setUser }}/> */}
@@ -44,6 +46,7 @@ export default function App() {
             <Route path='/account' element={<Account />} />
             <Route path='/todosimple' element={<TodoSimple />} />
             <Route path='/mytodolist' element={<MyToDoList />} />
+            <Route path='/myaccount' element={<MyAccount />} />
             <Route path='/students' element={<Students />} />
 
           </Route>
@@ -67,20 +70,21 @@ function MainMenu() {
   }
   return (
     <div>
-      <Link to='/'><button style={buttonStyle}>HOME</button></Link>
+      {/* <Link to='/'><button style={buttonStyle}>HOME</button></Link>
       <Link to='/states'><button style={buttonStyle}>States</button></Link>
-      {/* <Link to='/about'><button style={buttonStyle}>About</button></Link>
+       <Link to='/about'><button style={buttonStyle}>About</button></Link>
       <Link to='/contact'><button style={buttonStyle}>Contact</button></Link>
       <Link to='/services'><button style={buttonStyle}>Services</button></Link>
       <Link to='/card'><button style={buttonStyle}>Card</button></Link>
       <Link to='/newsapi'><button style={buttonStyle}>NewsAPI</button></Link>
       <Link to='/newsapinp'><Button style={buttonStyle}>NewsAPIP</Button></Link>
-      <Link to='/newspra2'><Button style={buttonStyle}>News API Pra2</Button></Link> */}
+      <Link to='/newspra2'><Button style={buttonStyle}>News API Pra2</Button></Link>
       <Link to='/students'><Button style={buttonStyle}>Students</Button></Link>
       <Link to='/otplogin'><Button style={buttonStyle}>OTPLogin</Button></Link>
       <Link to='/account'><Button style={buttonStyle}>Account</Button></Link>
       <Link to='/todosimple'><Button style={buttonStyle}>Todo Simple</Button></Link>
-      <Link to='/mytodolist'><Button style={buttonStyle}>MyToDoList</Button></Link>
+      <Link to='/mytodolist'><Button style={buttonStyle}>MyToDoList</Button></Link>*/}
+      <Link to='/myaccount'><Button style={buttonStyle}>My Account</Button></Link>
       <Link to='/students'><Button style={buttonStyle}>Students</Button></Link>
       <Outlet />
       <style>
