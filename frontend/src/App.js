@@ -19,6 +19,7 @@ import MyToDoList from './FB/MyToDoList'
 import TodoSimple from './FB/TodoSimple'
 import Students from './express/Students'
 import MyAccount from './express/MyAccount'
+import Fruits from './express/Fruits'
 export const MyContext = createContext(null)
 
 export default function App() {
@@ -48,6 +49,7 @@ export default function App() {
             <Route path='/mytodolist' element={<MyToDoList />} />
             <Route path='/myaccount' element={<MyAccount />} />
             <Route path='/students' element={<Students />} />
+            <Route path='/fruits' element={<Fruits />} />
 
           </Route>
         </Routes>
@@ -86,6 +88,7 @@ function MainMenu() {
       <Link to='/mytodolist'><Button style={buttonStyle}>MyToDoList</Button></Link>*/}
       <Link to='/myaccount'><Button style={buttonStyle}>My Account</Button></Link>
       <Link to='/students'><Button style={buttonStyle}>Students</Button></Link>
+      <Link to='/fruits'><Button style={buttonStyle}>Fruits</Button></Link>
       <Outlet />
       <style>
 

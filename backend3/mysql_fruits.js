@@ -74,7 +74,7 @@ function Mysql_Fruits(app) {
         const sql = "UPDATE fruits set name=?, price=? WHERE id=?"
         mydb.query(sql, [name, price, id], (error, result) => {
             if (error) return res.json(error.message)
-            return res.json('Fruit Updated')
+            return res.json(result)
         })
     })
 
