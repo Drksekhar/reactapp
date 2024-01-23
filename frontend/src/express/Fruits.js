@@ -128,7 +128,7 @@ export default function Fruits() {
                 {
                     list.map((item) => <>
                         <li>{item.id}{item.name} - {item.price}
-                            <Button onClick={() => deleteItem(item.id)}>DELETE</Button>
+                            <Button onClick={() => deleteItem(item.id)}>DELETE </Button>
                             <Button onClick={() => editItem(item.id)}>EDIT</Button>
 
                         </li>
