@@ -41,15 +41,15 @@ export default function App() {
             <Route path='card' element={<Card />} />
             <Route path='/newsapi' element={<NewsAPI />} />
             <Route path='/newsapinp' element={<NewsAPIP />} />
-            <Route path='/newspra2' element={<NewsPra2 />} /> */}
-            <Route path='/students' element={<Students />} />
+            <Route path='/newspra2' element={<NewsPra2 />} /> 
+            <Route path='/students' element={<Students />} />*/}
             <Route path='/otplogin' element={<OTPLogin user={user} />} />
             <Route path='/account' element={<Account />} />
-            <Route path='/todosimple' element={<TodoSimple />} />
+            {/*<Route path='/todosimple' element={<TodoSimple />} />*/}
             <Route path='/mytodolist' element={<MyToDoList />} />
-            <Route path='/myaccount' element={<MyAccount />} />
+            {/* <Route path='/myaccount' element={<MyAccount />} />
             <Route path='/students' element={<Students />} />
-            <Route path='/fruits' element={<Fruits />} />
+          <Route path='/fruits' element={<Fruits />} />*/}
 
           </Route>
         </Routes>
@@ -81,14 +81,14 @@ function MainMenu() {
       <Link to='/newsapi'><button style={buttonStyle}>NewsAPI</button></Link>
       <Link to='/newsapinp'><Button style={buttonStyle}>NewsAPIP</Button></Link>
       <Link to='/newspra2'><Button style={buttonStyle}>News API Pra2</Button></Link>
-      <Link to='/students'><Button style={buttonStyle}>Students</Button></Link>
+      <Link to='/students'><Button style={buttonStyle}>Students</Button></Link>*/}
       <Link to='/otplogin'><Button style={buttonStyle}>OTPLogin</Button></Link>
       <Link to='/account'><Button style={buttonStyle}>Account</Button></Link>
-      <Link to='/todosimple'><Button style={buttonStyle}>Todo Simple</Button></Link>
-      <Link to='/mytodolist'><Button style={buttonStyle}>MyToDoList</Button></Link>*/}
+      <Link to='/mytodolist'><Button style={buttonStyle}>MyToDoList</Button></Link>
+      {/* <Link to='/todosimple'><Button style={buttonStyle}>Todo Simple</Button></Link>
       <Link to='/myaccount'><Button style={buttonStyle}>My Account</Button></Link>
       <Link to='/students'><Button style={buttonStyle}>Students</Button></Link>
-      <Link to='/fruits'><Button style={buttonStyle}>Fruits</Button></Link>
+    <Link to='/fruits'><Button style={buttonStyle}>Fruits</Button></Link>*/}
       <Outlet />
       <style>
 
